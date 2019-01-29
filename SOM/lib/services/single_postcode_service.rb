@@ -66,11 +66,4 @@ class SinglePostcodeService
   def retrieve_code
     retrieve_result['codes']
   end
-
-
 end
-
-   test = SinglePostcodeService.new
-
-   test.single_postcode_request('rm109tx')
-   test.print_response

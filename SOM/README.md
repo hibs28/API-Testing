@@ -1,6 +1,6 @@
 # PostcodeIO
 ### Description
-This project is to understand how to test the file recieved by an API(Application Programming Interfaces) using http methods. This is based around the system object model (SOM)
+This project is to understand how to test the file recieved by an API(Application Programming Interfaces) using http methods. This is based around the system object model (SOM).
 
 ### Languages used
 * Ruby
@@ -11,21 +11,13 @@ http://postcodes.io/
 ### Ruby gems used
 * JSON
 * HTTParty
+* RSpec
 
-### How to download
-1. Lorem ipsum dolor sit amet, consectetur adipisicing elit
-2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-3. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-4. etc
-
-### Challenges (you can include images and code block here)
-1. Lorem ipsum dolor sit amet, consectetur adipisicing elit
-2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-3. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-4. etc
+### Challenges
+1. How to create tests for multiple postcodes. This was a challenge as I had to go within the hash, then loop the array and again, go into the hash to match certain items. For example one of the tests I created was to check if the postcodes I entered matched to each query.
+2. How each item is nested.
 
 ### Learning points
-1. Lorem ipsum dolor sit amet, consectetur adipisicing elit
-2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-3. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-4. etc
+1. There are different types of loop methods in ruby for different classes where a hash can use `.each_key, .each_pair` and for arrays `.each_index`.
+2. If the path is a **POST** method you use single quotes and not double.
+3. What is SOM and how to set one up.

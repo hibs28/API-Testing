@@ -8,21 +8,16 @@ describe PostcodeIO do
       @multiple_postcode_service.multiple_postcode_request(["E201AD","RM109TX"])
     end
 
-    # it 'should respond with a status code of 200' do
-    #   expect(@multiple_postcode_service.retrieve_status_code).to eq 200
-    # end
+    it 'should respond with a status code of 200' do
+      expect(@multiple_postcode_service.retrieve_status_code).to eq 200
+    end
     
-    # it 'should have two postcodes' do
-    #   expect(@multiple_postcode_service.retrieve_result.length).to eq 2
-    # end
+    it 'should have two postcodes' do
+      expect(@multiple_postcode_service.retrieve_result.length).to eq 2
+    end
 
     it 'should have E20 1AD and RM10 9TX' do
-      @multiple_postcode_service.retrieve_result.each_index{ |i|
-         expect(@multiple_postcode_service.retrieve_per_query_name(i)).to eql("E201AD").or eql("RM109TX")
-      }
-
+      @multiple_postcode_service.retrieve_result.each_index{ |i| expect(@multiple_postcode_service.retrieve_per_query_name(i)).to eql("E201AD").or eql("RM109TX")}
     end 
-
   end
-
 end
