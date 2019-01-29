@@ -5,7 +5,7 @@ describe PostcodeIO do
   context 'requesting information from the single service works correctly' do
     before(:all) do
       @single_postcode_service = PostcodeIO.new.single_postcode_service
-      @single_postcode_service.single_postcode_request('E201AD')
+      @single_postcode_service.single_postcode_request('RM109TX')
     end
 
     it 'should respond with a status code of 200' do
@@ -27,5 +27,21 @@ describe PostcodeIO do
     it 'should be empty for admin county' do 
       expect(@single_postcode_service.retrieve_admin_county).to be_nil
     end
+
+    it 'should be between 6 to 8 characters for postcode' do 
+      expect(@single_postcode_service.retrieve_postcode.length).to be_between(6,8)
+    end 
+
+    it 'should have the first part of the postcode to be outcode' do 
+    expect(@single_postcode_service.retrieve_postcode.split[0]).to eq(@single_postcode_service.retrieve_outcode)
+    end 
+
+    it 'should have the last part of the postcode to be incode' do 
+    expect(@single_postcode_service.retrieve_postcode.split[1]).to eq(@single_postcode_service.retrieve_incode)
+    end 
+
+    it 'should have a hash called code' do 
+      expect(@single_postcode_service.retrieve_code).to be_kind_of(Hash)
+    end 
   end
 end

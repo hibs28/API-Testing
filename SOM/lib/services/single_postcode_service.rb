@@ -43,9 +43,24 @@ class SinglePostcodeService
     retrieve_result['quality']
   end
 
+  def retrieve_post
+    retrieve_result['postcode']
+  end
+
+  def retrieve_outcode
+    retrieve_result['outcode']
+  end
+
+  def retrieve_incode
+    retrieve_result['incode']
+  end
+
+  def retrieve_code
+    retrieve_result['codes']
+  end
 end
 
-#  test = SinglePostcodeService.new
+   test = SinglePostcodeService.new
 
-#  test.single_postcode_request('rm109tx')
-#  p test.retrieve_result
+   test.single_postcode_request('rm109tx')
+  p test.retrieve_code
