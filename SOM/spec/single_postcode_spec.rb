@@ -44,11 +44,11 @@ describe PostcodeIO do
       expect(@single_postcode_service.retrieve_code).to be_kind_of(Hash)
     end 
 
-    it 'should have eastings as an Interger' do 
+    it 'should have eastings as an Integer' do 
       expect(@single_postcode_service.retrieve_eastings).to be_kind_of(Integer)
     end
 
-    it 'should have northings as an Interger' do 
+    it 'should have northings as an Integer' do 
       expect(@single_postcode_service.retrieve_northings).to be_kind_of(Integer)
     end
   end
