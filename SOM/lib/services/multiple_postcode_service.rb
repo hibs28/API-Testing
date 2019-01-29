@@ -25,10 +25,7 @@ class MultiplePostcodeService
   def retrieve_per_query_name(number)
     retrieve_per_query(number)['query']
   end 
-
-  def print_response
-   @multiple_postcode_data['query']
-  end
+  
 end
 
 # test = MultiplePostcodeService.new

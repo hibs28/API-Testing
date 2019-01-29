@@ -55,12 +55,22 @@ class SinglePostcodeService
     retrieve_result['incode']
   end
 
+  def retrieve_northings
+    retrieve_result['northings']
+  end
+  
+  def retrieve_eastings
+    retrieve_result['eastings']
+  end
+
   def retrieve_code
     retrieve_result['codes']
   end
+
+
 end
 
    test = SinglePostcodeService.new
 
    test.single_postcode_request('rm109tx')
-  p test.retrieve_code
+   test.print_response
