@@ -17,10 +17,8 @@ describe PostcodeIO do
     # end
 
     it 'should have E20 1AD and RM10 9TX' do
-      include("foo").and include("bar")
-
       @multiple_postcode_service.retrieve_result.each_index{ |i|
-         expect(@multiple_postcode_service.retrieve_per_query_name(i)).to all(include ("E201AD").or include("RM10 9TX")
+         expect(@multiple_postcode_service.retrieve_per_query_name(i)).to eql("E201AD").or eql("RM109TX")
       }
 
     end 
