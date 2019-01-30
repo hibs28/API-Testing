@@ -51,5 +51,13 @@ describe PostcodeIO do
     it 'should have northings as an Integer' do 
       expect(@single_postcode_service.retrieve_northings).to be_kind_of(Integer)
     end
+
+    it 'should have a uk longitude' do
+      expect(@single_postcode_service.retrieve_longitude).to be_between(-7.64133, 1.75159)
+    end
+
+    it 'should have a uk latitude' do
+      expect(@single_postcode_service.retrieve_latitude).to be_between(50.10319, 60.15456)
+    end
   end
 end

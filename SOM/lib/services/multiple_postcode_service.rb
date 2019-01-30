@@ -3,11 +3,16 @@ require 'json'
 
 class MultiplePostcodeService
   include HTTParty
-
   base_uri 'https://api.postcodes.io/'
 
   def multiple_postcode_request(postcodes_array)
     @multiple_postcode_data = JSON.parse(self.class.post('/postcodes', body: {"postcodes" => postcodes_array }).body)
+    @first_postcode = retrieve_result[0]['result']
+    @second_postcode = retrieve_result[1]['result']
+  end
+
+  def retrieve_first_postcode_results
+    @first_postcode
   end
 
   def retrieve_status_code
@@ -39,7 +44,7 @@ class MultiplePostcodeService
   end
 
   def retrieve_longitude
-    retrieve_per_query_result['longitude']
+    retrieve_first_postcode_results['longitude']
   end
 
   def retrieve_admin_county
